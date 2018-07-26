@@ -10,6 +10,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
         crossorigin="anonymous">
+
+    <style>
+        .card-title {
+            margin-bottom: 0.5em;
+        }
+    </style>
     <title>Materialize CSS</title>
 </head>
 
@@ -46,6 +52,87 @@
             </div>
         </div>
 
+        <div class="section orange lighten-2">
+            <div class="row container">
+                <div class="col l5 s12">
+                    <h2>Acerca de</h2>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus nulla accusantium in quae minima consectetur adipisci
+                        blanditiis quibusdam fugiat sapiente. Ratione ullam ducimus asperiores earum minus quaerat corporis
+                        sed porro.
+                    </p>
+                </div>
+                <div class="col l6 s12 right">
+                    <img src="https://images.pexels.com/photos/908284/pexels-photo-908284.jpeg" alt="" width="500" class="z-depth-2">
+                </div>
+            </div>
+        </div>
+
+        <div class="section white">
+            <div class="row container">
+                <h3>Ubicación</h3>
+            </div>
+        </div>
+
+        <div class="parallax-container">
+            <div class="parallax">
+                <img src="https://images.pexels.com/photos/943096/pexels-photo-943096.jpeg">
+            </div>
+            <div class="container">
+                <div class="offset-s6 white-text center">
+                    <h2 class="header">Otra sección</h2>
+                    <p class="grey-text lighten-3">
+                        lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="section white">
+            <div class="row container">
+                <h3>Contacto</h3>
+                <form action="#" class="col s12 l6">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input type="text" placeholder="Name">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input type="email" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <select>
+                                <option value="" disabled selected>Choose your option</option>
+                                <option value="1">PC Gamming</option>
+                                <option value="2">Development</option>
+                                <option value="3">Hardware</option>
+                            </select>
+                            <label>Interests</label>
+                        </div>
+                    </div>
+
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Enviar
+                        <i class="material-icons right">send</i>
+                    </button>
+
+                </form>
+
+                <div class="col s12 m5">
+                    <div class="card-panel blue-grey darken-1">
+                        <h3 class="white-text card-title">Tarjeta de formulario de contacto</h3>
+                        <p class="white-text">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus nulla accusantium in quae minima consectetur adipisci
+                            blanditiis quibusdam fugiat sapiente.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
 
@@ -112,7 +199,15 @@
         </div>
     </footer>
     <!-- Compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('select').formSelect();
+            $('.parallax').parallax();
+        });
+    </script>
 </body>
 
 </html>
