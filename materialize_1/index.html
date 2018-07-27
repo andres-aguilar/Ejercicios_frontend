@@ -15,6 +15,17 @@
         .card-title {
             margin-bottom: 0.5em;
         }
+
+        .big-text {
+            font-size: 8em
+        }
+
+        #mapa {
+            width: 100%;
+            min-height: 600px;
+            margin-top: 2em;
+            position: relative;
+        }
     </style>
     <title>Materialize CSS</title>
 </head>
@@ -45,10 +56,16 @@
 
     <!-- Main continer -->
     <div class="">
-        <div class="section white">
-            <div class="row container">
-                <h1 class="center header">Andres Aguilar</h1>
-                <p class="center">Ejemplo de landing page con Materialize CSS</p>
+
+        <div class="parallax-container">
+            <div class="parallax">
+                <img src="https://images.pexels.com/photos/908284/pexels-photo-908284.jpeg">
+            </div>
+            <div class="container">
+                <div class="row container">
+                    <h1 class="center">Andres Aguilar</h1>
+                    <p class="center">Ejemplo de landing page con Materialize CSS</p>
+                </div>
             </div>
         </div>
 
@@ -71,6 +88,9 @@
         <div class="section white">
             <div class="row container">
                 <h3>Ubicación</h3>
+                <section id="map">
+                    <div id="mapa"></div>
+                </section>
             </div>
         </div>
 
@@ -85,6 +105,42 @@
                         lorem ipsum dolor sit, amet consectetur adipisicing elit.
                     </p>
                 </div>
+
+                <div class="row">
+
+                    <div class="col s4">
+                        <!-- Promo Content 1 goes here -->
+                        <h2 class="center white-text big-text">
+                            <i class="fab fa-java"></i>
+                        </h2>
+                        <p class="grey-text lighten-3">
+                            lorem ipsum dolor sit, amet consectetur adipisicing elit. lorem ipsum dolor sit, amet consectetur adipisicing elit. lorem
+                            ipsum dolor sit, amet consectetur adipisicing elit.
+                        </p>
+                    </div>
+                    <div class="col s4">
+                        <!-- Promo Content 2 goes here -->
+                        <h2 class="center white-text big-text">
+                            <i class="fab fa-python"></i>
+                        </h2>
+                        <p class="grey-text lighten-3">
+                            lorem ipsum dolor sit, amet consectetur adipisicing elit. lorem ipsum dolor sit, amet consectetur adipisicing elit. lorem
+                            ipsum dolor sit, amet consectetur adipisicing elit.
+                        </p>
+                    </div>
+                    <div class="col s4">
+                        <!-- Promo Content 3 goes here -->
+                        <h2 class="center white-text big-text">
+                            <i class="fab fa-linux"></i>
+                        </h2>
+                        <p class="grey-text lighten-3">
+                            lorem ipsum dolor sit, amet consectetur adipisicing elit. lorem ipsum dolor sit, amet consectetur adipisicing elit. lorem
+                            ipsum dolor sit, amet consectetur adipisicing elit.
+                        </p>
+                    </div>
+
+                </div>
+
             </div>
         </div>
 
@@ -116,9 +172,12 @@
                         </div>
                     </div>
 
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Enviar
-                        <i class="material-icons right">send</i>
-                    </button>
+                    <div class="row">
+                        <button class="btn waves-effect waves-light" type="submit" name="action">Enviar
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </div>
+
 
                 </form>
 
@@ -199,6 +258,7 @@
         </div>
     </footer>
     <!-- Compiled and minified JavaScript -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOrJjDIKfv58LVhjytCsKIE0hq4BbFFRs" charset="utf-8"></script>
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 
@@ -207,6 +267,34 @@
             $('select').formSelect();
             $('.parallax').parallax();
         });
+
+        function initMap() {
+            const coords = {
+                lat: 19.074996,
+                lng: -98.206573
+            };
+
+            // Inicializado el mapa con las opciones basicas
+            let map = new google.maps.Map(document.querySelector("#mapa"), {
+                center: coords,
+                zoom: 16,
+            });
+
+            // Creando un marcador
+            let marker = new google.maps.Marker({
+                position: coords,
+                map,
+                title: 'Como llegar'
+            });
+            /*
+            marker.addListener('click', function() {
+              infowindow.open(map, marker);
+            });*/
+
+        }
+
+        initMap();
+
     </script>
 </body>
 
